@@ -1,0 +1,35 @@
+span {
+	color:#FFFFFF;
+}
+
+input {
+	background-color:#454441;
+	color:#FFFFFF;
+}
+
+#videos {
+	border-color:white;
+	border-style:solid;
+	margin:5px;
+	padding:10px;
+	height:37vw;
+	overflow-y:auto;
+}
+
+.video-thumbnail {
+	margin-right: 10px;
+	background-color:#454441;
+	border-style:solid;
+	border-color:#636360;
+	border-width:3px;
+}
+
+.video-progress {
+	width:300px;
+	background-color:#636360;
+}
+
+.format-button:checked {
+	background-color:black;
+}
+

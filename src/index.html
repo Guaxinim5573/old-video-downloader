@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Video Downloader</title>
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';">
+
+		<!-- Bootstrap css -->
+		<link rel="stylesheet" href="./contents/bootstrap/bootstrap.min.css" />
+		<!-- My CSS -->
+		<link rel="stylesheet" href="./main.css" />
+
+		<!-- Jquery -->
+		<script>const $ = window.jQuery = window.$ = require("jquery")</script>
+		<!-- Popper -->
+		<script type="text;javascript" src="./contents/popper/popper.min.js"></script>
+		<!-- Bootstrap js -->
+		<script type="text/javascript" src="./contents/bootstrap/bootstrap.min.js"></script>
+	</head>
+	<body style="background-color:#454441;">
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-bottom:12px;">
+			<img src="./youtube.png" width="40px" style="margin-right:5px">
+			<span>YouTube Video Downloader</span>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<button type="button" class="nav-link btn" onclick="loadSettings()"><span>Settings</span></button>
+				</li>
+			</ul>
+		</nav>
+		<div class="position-absolute w-100 d-flex flex-column justify-content-center align-items-center" id="toasts">
+		</div>
+		<div id="videos">
+		</div>
+
+		<center>
+			<input type="url" id="url" placeholder="Insert URL" style="width: 400px;margin: 10px;"><br>
+			<button onclick="getInfo()" id="spin-btn" type="button" class="btn btn-primary">
+				<span id="spin" class="spinner-border spinner-border-sm" style="display:none;"></span>  Get video
+			</button><br>
+		</center>
+
+		<br>
+		<footer class="page-footer fixed-bottom font-small dark bg-dark">
+			<div class="footer-copyright text-center py-3"><span>Made with <span style="color:RED;">love</span> by <a href="https://github.com/Guaxinim5573/video-downloader">Guaxinim5573</a></span></div>
+		</footer>
+
+		<!-- Confirm Download Model -->
+		<div class="modal fade" id="downloadModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Confirm download?</h4>
+						<button type="button" class="close" data-dismiss="modal">×</button>
+					</div>
+					<div class="modal-body">
+						<div id="current-video">
+							<img class="video-thumbnail" id="current-video-thumbnail" width="181px" alt="vide-thumbnail"><br>
+							<span id="current-video-title" style="font-size:18px;color:#000000;"></span><br>
+							<img class="float-left rounded-circle" id="current-video-channel-img" width="36px" height="36px" style="margin-right:5px;">
+							<span id="current-video-channel-name" style="font-size:14px;color:#000000;">Unknown</span>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="mp4" onclick="download('mp4')"><span id="spin-mp4" class="spinner-border spinner-border-sm" style="display:none;"></span> Download MP4</button>
+						<button type="button" class="btn btn-success" id="mp3" onclick="download('mp3')"><span id="spin-mp3" class="spinner-border spinner-border-sm" style="display:none;"></span> Download MP3</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Settings modal -->
+		<div class="modal fade" id="settingsModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Settings</h4>
+						<button type="button" class="close" data-dismiss="modal">×</button>
+					</div>
+					<div class="modal-body">
+						Destination Folder:<br>
+						<input type="text" id="destPath" style="margin-bottom:5px;width:80%;" disabled><br>
+						<button class="btn btn-warning" onclick="setDestPath()">Change</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./scripts/index.js"></script>
+	</body>
+</html>

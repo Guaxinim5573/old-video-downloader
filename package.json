@@ -1,0 +1,47 @@
+{
+  "name": "video-downloader",
+  "version": "0.1.0",
+  "description": "A small youtube video downloader build with electron",
+  "main": "index.js",
+  "homepage": "https://github.com/Guaxinim5573/video-downloader",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.guaxinim5573.video-downloader",
+    "productName": "Video Downloader",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": "deb",
+      "icon": "build/icons"
+    },
+    "deb": {
+      "depends": ["gconf2", "gconf-service", "libnotify4", "libappindicator1", "libxtst6", "libnss3", "ffmpeg"]
+    }
+  },
+  "keywords": [],
+  "author": {
+    "name": "Guaxinim5573",
+    "email": "kaioguaxinim@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/Guaxinim5573/video-downloader"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^9.1.1",
+    "electron-builder": "^22.8.0"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "fluent-ffmpeg": "^2.1.2",
+    "jquery": "^3.5.1",
+    "lowdb": "^1.0.0",
+    "ytdl-core": "^3.1.2"
+  }
+}
