@@ -1,3 +1,6 @@
+# Note
+This app is awful and it was the first app I ever made. I'll remake this soon.
+
 # video-downloader
 A small youtube video downloader build with electron
 
